@@ -11,8 +11,13 @@ const empty = (element) => {
     element.value = 0;
 };
 
+document.getElementById("cancle").addEventListener("click", () => {
+    empty(main);
+});
+
 document.getElementById("ac").addEventListener("click", () => {
     empty(main);
+    empty(temp);
     document.getElementById('history').innerHTML = '';
 });
 
