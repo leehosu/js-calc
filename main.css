@@ -58,4 +58,6 @@
 
   #history{
     color : black;
+    overflow: scroll;
+    height: 330px;
   }

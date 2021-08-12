@@ -90,4 +90,5 @@ document.getElementById("result").addEventListener("click", () => {
     }
 
     addToHistory(main.value);
+    empty(main);
 });
