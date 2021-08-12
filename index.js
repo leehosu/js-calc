@@ -3,13 +3,15 @@ const main = document.getElementById("main");
 let temp = document.getElementById("temp");
 let history = '';
 
-let count = 0;
-
 let calculation;
 
 const empty = (element) => {
     element.value = 0;
 };
+
+const addToHistory = (value) => {
+    document.getElementById('history').innerHTML += '<br/>' + value ;
+}
 
 document.getElementById("cancle").addEventListener("click", () => {
     empty(main);
@@ -71,31 +73,21 @@ document.getElementById("remainder").addEventListener("click", () => {
 document.getElementById("result").addEventListener("click", () => {
     
     if(calculation === "plus"){ // 덧셈 
-        count++;
         main.value = parseInt(temp) + parseInt(main.value)
     }
     else if(calculation === "minus"){ // 뺄셈
-        count++;
         main.value = parseInt(temp) - parseInt(main.value)
     }
     else if(calculation === "multiply"){ // 곱셈
-        count++;
         main.value = parseInt(temp) * parseInt(main.value)
 
     }
     else if(calculation === "divide"){ // 나누기
-        count++;
         main.value = parseInt(temp) / parseInt(main.value)
     }
     else if(calculation === "remainder"){ // 퍼센트
-        count++;
         main.value = parseInt(temp) % parseInt(main.value)
     }
 
-
     addToHistory(main.value);
 });
-
-function addToHistory(value) {
-    document.getElementById('history').innerHTML += '<br/>' + value ;
-  }
